@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import NodePanel from './components/NodePanel';
+import FlowBuilder from './components/FlowBuilder';
+import SettingsPanel from './components/SettingsPanel';
+import SaveButton from './components/SaveButton';
+import { NodeProvider } from './context/FlowContext';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NodeProvider>
+      <div className="app">
+        <NodePanel />
+        <FlowBuilder />
+        <SettingsPanel />
+        <SaveButton />
+      </div>
+    </NodeProvider>
   );
 }
 

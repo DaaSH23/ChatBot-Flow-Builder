@@ -1,38 +1,53 @@
-.App {
+/* src/App.css */
+.app {
+  display: flex;
+}
+
+.flow-builder {
+  width: 70%;
+  height: 100vh;
+}
+
+aside {
+  width: 15%;
+  padding: 10px;
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;
+}
+
+.settings-panel {
+  width: 15%;
+  padding: 10px;
+  background: #f4f4f4;
+  border-left: 1px solid #ddd;
+}
+
+.dndnode {
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  background: white;
+  border: 1px solid #ddd;
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+}
+
+.text-node {
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.msgPng{
+  height: 20px;
+  width: 20px;
+  padding: 0px;
+  margin: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.msgText{
+  margin: 0px;
+  margin-left: 5px;
 }
