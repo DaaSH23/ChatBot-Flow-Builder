@@ -15,7 +15,7 @@ const NodePanel = () => {
 
   return (
     <aside>
-    <div className="desc">* Drag & drop to the canvas.</div>
+    {/* <div className="desc">* Drag & drop to the canvas.</div> */}
       <div className="NodePanelcont">
         <div
           className="dndnode input"

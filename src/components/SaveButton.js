@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NodeContext } from '../context/FlowContext';
-
+import { toast } from 'react-toastify';
 
 const SaveButton = () => {
   const { nodes, edges } = useContext(NodeContext);
@@ -9,9 +9,9 @@ const SaveButton = () => {
     const targetHandles = edges.map((edge) => edge.target);
     const nodesWithNoTargets = nodes.filter((node) => !targetHandles.includes(node.id));
     if (nodesWithNoTargets.length > 1) {
-      alert('Error: More than one node has empty target handles.');
+      toast.error('Error, Cannot Save Flow !');
     } else {
-      alert('Flow is valid!');
+      toast.success('Success, Flow Saved !');
     }
   };
 
