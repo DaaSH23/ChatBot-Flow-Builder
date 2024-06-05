@@ -1,14 +1,16 @@
 import React, { createContext, useState } from 'react';
+import { useNodesState, useEdgesState } from 'react-flow-renderer';
+
 
 export const NodeContext = createContext();
 
 export const NodeProvider = ({ children }) => {
-  const [nodes, setNodes] = useState([]);
-  const [edges, setEdges] = useState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [selectedNode, setSelectedNode] = useState(null);
+  const [showPanel, setPanelChange] = useState(false);
 
   const handleNodeChange = (updatedNode) => {
-    console.log("Updated node from Apps", updatedNode);
     setNodes((nds) =>
       nds.map((node) => (node.id === updatedNode.id ? updatedNode : node))
     );
@@ -18,11 +20,15 @@ export const NodeProvider = ({ children }) => {
   const contextValue = {
     nodes,
     setNodes,
+    onNodesChange,
     edges,
     setEdges,
+    onEdgesChange,
     selectedNode,
     setSelectedNode,
     handleNodeChange,
+    showPanel,
+    setPanelChange,
   };
 
   return (

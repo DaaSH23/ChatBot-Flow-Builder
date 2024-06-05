@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NodeContext } from '../context/FlowContext';
 
+
 const SaveButton = () => {
   const { nodes, edges } = useContext(NodeContext);
 
@@ -14,7 +15,11 @@ const SaveButton = () => {
     }
   };
 
-  return <button onClick={validateFlow}>Save Flow</button>;
+  return(
+    <div className='Navbar'>
+      <button className='saveButton' onClick={validateFlow}>Save Changes</button>
+    </div>
+  ) 
 };
 
 export default SaveButton;

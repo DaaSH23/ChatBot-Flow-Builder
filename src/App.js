@@ -11,11 +11,11 @@ function App() {
 
   return (
     <NodeProvider>
+      <SaveButton />
       <div className="app">
-        <NodePanel />
         <FlowBuilder />
+        <NodePanel />
         <SettingsPanel />
-        <SaveButton />
       </div>
     </NodeProvider>
   );
